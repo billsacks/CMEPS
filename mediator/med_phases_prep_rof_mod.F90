@@ -52,8 +52,6 @@ module med_phases_prep_rof_mod
 
   character(len=*), parameter :: volr_field             = 'Flrr_volrmch'
   character(len=*), parameter :: irrig_flux_field       = 'Flrl_irrig'
-  character(len=*), parameter :: irrig_normalized_field = 'Flrl_irrig_normalized'
-  character(len=*), parameter :: irrig_volr0_field      = 'Flrl_irrig_volr0     '
 
   ! the following are the fields that will be accumulated from the land and are derived from fldlistTo(comprof)
   character(CS), allocatable :: lnd2rof_flds(:)
