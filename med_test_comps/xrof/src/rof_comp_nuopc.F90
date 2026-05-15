@@ -474,23 +474,29 @@ contains
     if (chkerr(rc,__LINE__,u_FILE_u)) return
 
     ncomp = 6
+
+    ! Note that, in contrast to fields in other components, we force non-negative values
+    ! for ROF fields
     if (present(ungridded_index)) then
        call ESMF_FieldGet(lfield, farrayPtr=data2d, rc=rc)
        if (chkerr(rc,__LINE__,u_FILE_u)) return
        if (gridToFieldMap == 1) then
           do i = 1,size(data2d, dim=1)
-             data2d(i,ungridded_index) = (nf+1) * 1.0_r8
+             data2d(i,ungridded_index) = (nf*100) * abs(cos(pi*lat(i)/180.0_R8) * &
+                  sin((pi*lon(i)/180.0_R8) - (ncomp-1)*(pi/3.0_R8)) ) + (ncomp*10.0_R8)
           end do
        else if (gridToFieldMap == 2) then
           do i = 1,size(data2d, dim=2)
-             data2d(ungridded_index,i) = (nf+1) * 1.0_r8
+             data2d(ungridded_index,i) = (nf*100) * abs(cos(pi*lat(i)/180.0_R8) * &
+                  sin((pi*lon(i)/180.0_R8) - (ncomp-1)*(pi/3.0_R8)) ) + (ncomp*10.0_R8)
           end do
        end if
     else
        call ESMF_FieldGet(lfield, farrayPtr=data1d, rc=rc)
        if (chkerr(rc,__LINE__,u_FILE_u)) return
        do i = 1,size(data1d)
-          data1d(i) = (nf+1) * 1.0_r8
+          data1d(i) = (nf*100) * abs(cos(pi*lat(i)/180.0_R8) * &
+               sin((pi*lon(i)/180.0_R8) - (ncomp-1)*(pi/3.0_R8)) ) + (ncomp*10.0_R8)
        end do
     end if
 
