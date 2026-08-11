@@ -1107,6 +1107,15 @@
     <desc>pes or cores used relative to MAX_MPITASKS_PER_NODE for accounting (0 means TOTALPES is valid)</desc>
   </entry>
 
+  <entry id="BFBFLAG">
+    <type>logical</type>
+    <valid_values>TRUE,FALSE</valid_values>
+    <default_value>FALSE</default_value>
+    <group>run_flags</group>
+    <file>env_run.xml</file>
+    <desc>If TRUE, perform CMEPS calculations such as global sums in a manner that is bit-for-bit independent of processor count</desc>
+  </entry>
+
   <!-- ===================================================================== -->
   <!-- definitions grid -->
   <!-- ===================================================================== -->
@@ -2514,21 +2523,6 @@
    <file>env_run.xml</file>
    <desc>add aoflux calculation to runseq</desc>
  </entry>
-
-  <!-- ===================================================================== -->
-  <!-- TODO: the following should be deleted. They are still used by  -->
-  <!-- the component testing but are not doing anything in cmeps -->
-  <!-- ===================================================================== -->
-
-  <entry id="BFBFLAG">
-    <type>logical</type>
-    <valid_values>TRUE,FALSE</valid_values>
-    <default_value>FALSE</default_value>
-    <group>run_flags</group>
-    <file>env_run.xml</file>
-    <desc>turns on coupler bit-for-bit reproducibility with varying pe counts</desc>
-  </entry>
-
 
  <help>
     =========================================
