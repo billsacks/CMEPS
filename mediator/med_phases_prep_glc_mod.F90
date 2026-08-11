@@ -1277,12 +1277,12 @@ contains
     deallocate(local_accum_lnd)
     deallocate(local_ablat_lnd)
     if (maintask) then
-       write(logunit,'(a,d21.10)') trim(subname)//'global_accum_lnd = ', global_accum_lnd(1)
-       write(logunit,'(a,d21.10)') trim(subname)//'global_ablat_lnd = ', global_ablat_lnd(1)
+       write(logunit,'(a,d28.17)') trim(subname)//'global_accum_lnd = ', global_accum_lnd(1)
+       write(logunit,'(a,d28.17)') trim(subname)//'global_ablat_lnd = ', global_ablat_lnd(1)
        do t = 1, num_wtracers
-          write(logunit,'(a,i0,a,d21.10)') trim(subname)//'tracer #', t, &
+          write(logunit,'(a,i0,a,d28.17)') trim(subname)//'tracer #', t, &
                ': global_accum_lnd = ', global_accum_lnd(1+t)
-          write(logunit,'(a,i0,a,d21.10)') trim(subname)//'tracer #', t, &
+          write(logunit,'(a,i0,a,d28.17)') trim(subname)//'tracer #', t, &
                ': global_ablat_lnd = ', global_ablat_lnd(1+t)
        end do
     endif
@@ -1321,12 +1321,12 @@ contains
     deallocate(local_accum_glc)
     deallocate(local_ablat_glc)
     if (maintask) then
-       write(logunit,'(a,d21.10)') trim(subname)//'global_accum_glc = ', global_accum_glc(1)
-       write(logunit,'(a,d21.10)') trim(subname)//'global_ablat_glc = ', global_ablat_glc(1)
+       write(logunit,'(a,d28.17)') trim(subname)//'global_accum_glc = ', global_accum_glc(1)
+       write(logunit,'(a,d28.17)') trim(subname)//'global_ablat_glc = ', global_ablat_glc(1)
        do t = 1, num_wtracers
-          write(logunit,'(a,i0,a,d21.10)') trim(subname)//'tracer #', t, &
+          write(logunit,'(a,i0,a,d28.17)') trim(subname)//'tracer #', t, &
                ': global_accum_glc = ', global_accum_glc(1+t)
-          write(logunit,'(a,i0,a,d21.10)') trim(subname)//'tracer #', t, &
+          write(logunit,'(a,i0,a,d28.17)') trim(subname)//'tracer #', t, &
                ': global_ablat_glc = ', global_ablat_glc(1+t)
        end do
     endif
@@ -1500,13 +1500,13 @@ contains
     endif
     if (maintask) then
        if (present(tracer_num)) then
-          write(logunit,'(a,i0,a,d21.10)') trim(caller_subname)//'tracer #', tracer_num, &
+          write(logunit,'(a,i0,a,d28.17)') trim(caller_subname)//'tracer #', tracer_num, &
                ': accum_renorm_factor = ', accum_renorm_factor
-          write(logunit,'(a,i0,a,d21.10)') trim(caller_subname)//'tracer #', tracer_num, &
+          write(logunit,'(a,i0,a,d28.17)') trim(caller_subname)//'tracer #', tracer_num, &
                ': ablat_renorm_factor = ', ablat_renorm_factor
        else
-          write(logunit,'(a,d21.10)') trim(caller_subname)//'accum_renorm_factor = ', accum_renorm_factor
-          write(logunit,'(a,d21.10)') trim(caller_subname)//'ablat_renorm_factor = ', ablat_renorm_factor
+          write(logunit,'(a,d28.17)') trim(caller_subname)//'accum_renorm_factor = ', accum_renorm_factor
+          write(logunit,'(a,d28.17)') trim(caller_subname)//'ablat_renorm_factor = ', ablat_renorm_factor
        endif
     endif
 
